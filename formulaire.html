@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Formulaire</title>
+
+</head>
+
+<body>
+    <div id="output">
+        <script>
+
+            function formulaire() {
+                if (document.formulaire.nom.value == "") {
+                    alert("Veuillez entrer votre nom!");
+                    document.formulaire.nom.focus();
+                    return false;
+                }
+                if (document.formulaire.mot_de_passe.value == "") {
+                    alert("Veuillez entrer votre mot de passe!");
+                    document.formulaire.mot_de_passe.focus();
+                    return false;
+                }
+                if (document.formulaire.courriel.value == "") {
+                    alert("Veuillez mettre l'@!");
+                    document.formulaire.courriel.focus();
+                    return false;
+                }
+                if (document.formulaire.courriel.value.indexOf('@') == -1) {
+                    alert("Veuillez mettre l'@!");
+                    document.formulaire.courriel.focus();
+                    return false;
+                }
+
+
+            }
+
+        </script>
+
+
+        <h1>formulaire</h1>
+        <p>Les champs avec * sont obligatoires</p>
+        <form name="formulaire" action="mailto:votreemail@***.***" method="post" onSubmit="return formulaire()">
+            <p>
+
+                Nom: <input type="text" size="40" name="nom">
+                <br>
+                Mot de Passe: <input type="text" size="40" name="mot_de_passe">
+                <form>
+                    Courriel: <input type="text" size="40" name="courriel">
+
+                    formulaire: <input type="submit" value="valider"><input type="reset" value="vider">
+                    <script>
+
+                    </script>
+
+                    Pour envoyer vous devez être connecté à Internet!
+            </p>
+        </form>
+
+</body>
+
+</html>
